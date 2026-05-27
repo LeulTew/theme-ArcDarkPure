@@ -1,0 +1,46 @@
+/* 1. THE ZEN MARGINS (Only for the webpage content) */
+#main {
+    margin: 8px !important; 
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.05) !important;
+    background-color: var(--colorBg) !important;
+}
+
+/* 1.1 FULLSCREEN FIX (Removes margins/borders on YouTube/fullscreen) */
+#browser.fullscreen #main,
+#main:fullscreen,
+#main:-webkit-full-screen,
+#browser:has(:fullscreen) #main {
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* 2. THE SMOOTH SLIDE (Applied to the native wrapper) */
+/* This stops the "pop" and makes it a Zen-like slide */
+#auto-hide-wrapper.left {
+    will-change: left;
+    /* Closing Speed */
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+#auto-hide-wrapper.left.show {
+    /* Opening Speed - 0.4s for that 'buttery' feel */
+    transition: left 0.4s cubic-bezier(0.05, 0.7, 0.1, 1) !important;
+}
+
+/* 3. CLEANUP (Fixes the 'Two Backgrounds' and alignment issues) */
+#tabs-tabbar-container.left {
+    height: 100% !important;
+    margin: 0 !important;   /* Removes the 'moved right/down' issue */
+    padding: 0 !important;
+    border: none !important;
+    background: var(--colorBg) !important; /* Forces a single clean background */
+}
+
+/* Ensure the wrapper doesn't add extra padding */
+#auto-hide-wrapper {
+    padding: 0 !important;
+    margin: 0 !important;
+}
