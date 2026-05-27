@@ -16,6 +16,9 @@ vivaldi version: v6.6 - v7.0
     --colorToviTransparent:transparent;
     --webview-shadow-light:0px 1px 3px 0px rgba(0, 0, 0, 0.1), 0px 0px var(--window-border) 0px rgba(0, 0, 0, 0.10);
     --webview-shadow-dark:0px 2px 2px 0px rgba(0, 0, 0, 0.05), 0px 2px 8px 0px rgba(0, 0, 0, 0.05), 0px 0px 0px 1.2px #ffffff18;
+
+    /* Linux/Hyprland & Vivaldi 8 Customizations */
+    --linux-window-buttons-display: flex; /* Set to 'none' to hide window controls on Linux tiling window managers */
 }
 
 /*breakmode*/
@@ -87,7 +90,7 @@ footer#footer,
     height:var(--mac-header) !important;
 }
 
-.mac #titlebar #pagetitle, #titlebar #pagetitle .linux.alt{
+#browser.mac #titlebar #pagetitle, #browser.linux.alt #titlebar #pagetitle{
     height:var(--mac-header) !important;
     font-size:11px;
     color:var(--colorFg);
@@ -157,7 +160,7 @@ footer#footer,
 #browser.linux:not(.tabs-top) #titlebar .vivaldi:hover,
 #browser.win:not(.is-settingspage):not(.tabs-top) #titlebar .vivaldi:hover{
     color:var(--colorFg);
-    background-color:var(--colorImageBgAlpha), var(--colorBgAlpha);
+    background-color:var(--colorImageBgAlpha, var(--colorBgAlpha));
 }
 
 /*windowButtonGroup-Mac*/
@@ -211,6 +214,7 @@ footer#footer,
 #browser.linux:not(.is-settingspage):not(.tabs-top):not(.tabs-bottom) .window-buttongroup{
     right: calc(var(--window-border) / var(--uiZoomLevel));
     top: calc(1px / var(--uiZoomLevel));
+    display: var(--linux-window-buttons-display) !important;
 }
 
 #browser.linux:not(.is-settingspage):not(.tabs-top):not(.tabs-bottom) .window-buttongroup button{
@@ -258,6 +262,13 @@ footer#footer,
 #browser:not(.tabs-top):not(.tabs-bottom).address-top .UrlBar-AddressField, 
 #browser:not(.tabs-top):not(.tabs-bottom).address-top .SearchField {
     background-color: var(--colorFgAlpha);
+}
+
+/* Ensure inputs transition smoothly on hover and focus */
+.UrlBar-AddressField,
+.UrlBar-SearchField,
+.SearchField {
+    transition: background-color 0.2s ease, border-color 0.2s ease !important;
 }
 
 #browser:not(.tabs-top):not(.tabs-bottom).color-behind-tabs-off .UrlBar-AddressField {
@@ -599,6 +610,15 @@ footer#footer,
 
 .tab-position .tab:active {
     transform: scale(0.98);
+}
+
+/* Premium Active Tab styling for Arc/Zen look */
+.tab-position .tab.active {
+    background-color: var(--colorBg) !important;
+    border-radius: 8px !important;
+    margin: 4px 6px !important;
+    width: calc(100% - 12px) !important;
+    box-shadow: inset 3px 0 0 var(--colorAccentBg), 0 2px 4px rgba(0, 0, 0, 0.12) !important;
 }
 
 

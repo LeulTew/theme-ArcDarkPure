@@ -1,7 +1,12 @@
+:root {
+    --zen-margin: 8px; /* Margin around the browser content. Set to 0px for tiling/compact layouts (like on Hyprland) */
+    --zen-radius: 10px; /* Border radius of the main content */
+}
+
 /* 1. THE ZEN MARGINS (Only for the webpage content) */
 #main {
-    margin: 8px !important; 
-    border-radius: 10px !important;
+    margin: var(--zen-margin) !important; 
+    border-radius: var(--zen-radius) !important;
     overflow: hidden !important;
     box-shadow: 0 0 0 1px rgba(255,255,255,0.05) !important;
     background-color: var(--colorBg) !important;
