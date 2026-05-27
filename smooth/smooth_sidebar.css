@@ -28,11 +28,13 @@
     will-change: left;
     /* Closing Speed */
     transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transition-delay: 0s !important;
 }
 
 #auto-hide-wrapper.left.show {
     /* Opening Speed - 0.4s for that 'buttery' feel */
     transition: left 0.4s cubic-bezier(0.05, 0.7, 0.1, 1) !important;
+    transition-delay: 0s !important;
 }
 
 /* 3. CLEANUP (Fixes the 'Two Backgrounds' and alignment issues) */
