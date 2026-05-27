@@ -556,7 +556,8 @@ footer#footer,
 /* Arc/Zen Tab Hover & Collapse Effect */
 #tabs-tabbar-container.left, 
 #tabs-tabbar-container.right {
-    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transition-delay: 0s !important;
     width: 55px !important; /* Slightly wider for better icon centering */
     overflow: hidden;
 }
@@ -564,6 +565,7 @@ footer#footer,
 #tabs-tabbar-container.left:hover, 
 #tabs-tabbar-container.right:hover {
     width: 250px !important;
+    transition-delay: 0s !important;
 }
 
 /* Center icons only in narrow state */
